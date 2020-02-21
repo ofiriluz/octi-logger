@@ -24,7 +24,8 @@ namespace Octi
         {
             LL_DEBUG,
             LL_INFO,
-            LL_WARN,
+            LL_NOTICE,
+            LL_WARNING,
             LL_ERROR
         };
 

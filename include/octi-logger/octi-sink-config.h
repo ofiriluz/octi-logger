@@ -24,21 +24,21 @@ namespace Octi
     {
         enum SinkOption
         {
-            WO_CONSOLE_DISABLE_COLOR,
+            SO_CONSOLE_DISABLE_COLOR,
 
-            WO_FILE_LOG_FILES_PATH,
-            WO_FILE_SIZE_PER_LOG_FILE,
-            WO_FILE_MAX_LOG_FILES,
-            WO_FILE_LOG_FOLDER_PREFIX,
-            WO_FILE_SEPERATE_CHANNEL_FILES,
+            SO_FILE_LOG_FILES_PATH,
+            SO_FILE_SIZE_PER_LOG_FILE,
+            SO_FILE_MAX_LOG_FILES,
+            SO_FILE_LOG_FOLDER_PREFIX,
+            SO_FILE_SEPERATE_CHANNEL_FILES,
 
-            WO_SYSLOG_NAME
+            SO_SYSLOG_NAME
         };
         enum SinkType
         {
-            LW_FILE_WRITER,
-            LW_CONSOLE_WRITER,
-            LW_SYSLOG_WRITER
+            ST_FILE_WRITER,
+            ST_CONSOLE_WRITER,
+            ST_SYSLOG_WRITER
         };
 
         class SinkConfig

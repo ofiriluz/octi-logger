@@ -35,7 +35,8 @@ namespace Octi
 
                 Log debug();
                 Log info();
-                Log warn();
+                Log notice();
+                Log warning();
                 Log error();
 
                 friend class Log;
