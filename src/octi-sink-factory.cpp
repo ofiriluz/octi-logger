@@ -22,7 +22,7 @@ namespace Octi
         {
         }
 
-        SinkFactory &SinkFactory::get_instance()
+        SinkFactory &SinkFactory::instance()
         {
             static SinkFactory factory;
             return factory;

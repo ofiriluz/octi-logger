@@ -21,7 +21,7 @@ namespace Octi
         {
         }
 
-        Manager &Manager::get_instance()
+        Manager & Manager::instance()
         {
             static Manager manager;
             return manager;
@@ -60,7 +60,7 @@ namespace Octi
             // Create all the sinks
             for (auto &&sink_config : config_->get_sinks())
             {
-                SinkPtr sink = SinkFactory::get_instance().create_sink(sink_config);
+                SinkPtr sink = SinkFactory::instance().create_sink(sink_config);
                 if (sink)
                 {
                     sinks_.push_back(sink);

@@ -18,12 +18,12 @@ namespace Octi
     {
         void Logger::write_log(const Log &log) const
         {
-            Manager::get_instance().write(log, logger_channel_);
+            Manager::instance().write(log, logger_channel_);
         }
 
         Logger::Logger(const std::string &channel)
         {
-            logger_channel_ = Manager::get_instance().get_channel(channel);
+            logger_channel_ = Manager::instance().get_channel(channel);
         }
 
         Logger::~Logger()

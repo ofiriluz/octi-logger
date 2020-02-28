@@ -36,7 +36,7 @@ namespace Octi
                 Manager();
 
             public:
-                static Manager &get_instance();
+                static Manager & instance();
                 virtual ~Manager();
                 ChannelPtr get_channel(const std::string &name);
                 void configure(const ManagerConfigPtr &config);

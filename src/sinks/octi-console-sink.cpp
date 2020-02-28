@@ -10,7 +10,6 @@
  */
 
 #include "octi-logger/sinks/octi-console-sink.h"
-#include <iostream>
 
 namespace Octi
 {
@@ -21,26 +20,26 @@ namespace Octi
             switch (log_level)
             {
                 case LogLevel::LL_DEBUG:
-                    std::cout << "\e[32m";
+                    printf("\e[32m");
                     break;
                 case LogLevel::LL_INFO:
-                    std::cout << "\e[36m";
+                    printf("\e[36m");
                     break;
                 case LogLevel::LL_NOTICE:
-                    std::cout << "\e[34m";
+                    printf("\e[34m");
                     break;
                 case LogLevel::LL_WARNING:
-                    std::cout << "\e[33m";
+                    printf("\e[33m");
                     break;
                 case LogLevel::LL_ERROR:
-                    std::cout << "\e[31m";
+                    printf("\e[31m");
                     break;
             }
         }
 
         void ConsoleSink::reset_log_color()
         {
-            std::cout << "\e[39m";
+            printf("\e[39m");
         }
 
         ConsoleSink::ConsoleSink(const SinkConfig & config)
@@ -70,20 +69,20 @@ namespace Octi
                 
                 // Format the log time
                 std::time_t time = std::chrono::system_clock::to_time_t(log.get_time_created());
-                std::strftime(dtf, sizeof(dtf), "[%d/%m/%Y %H:%M:%S]",std::localtime(&time));;
+                std::strftime(dtf, sizeof(dtf), "%d/%m/%Y %H:%M:%S",std::localtime(&time));;
 
                 // Output to console
-                std::cout << dtf << "[" << channel->get_channel_name() << "][" << Log::level_to_string(log.get_log_level()) 
-                            << "]: "
-                            << log.get_stream()->str();
-
+                printf("[%s][%s][%s]: %s", 
+                        dtf, 
+                        channel->get_channel_name().c_str(), 
+                        Log::level_to_string(log.get_log_level()).c_str(), 
+                        log.get_stream()->str().c_str());
                 // Reset output color
                 if(!disable_console_color_)
                 {
                     reset_log_color();
                 }
-
-                std::cout << std::endl;
+                printf("\n");
             }
         }
     }

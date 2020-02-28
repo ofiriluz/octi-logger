@@ -26,7 +26,7 @@ namespace Octi
                 SinkFactory();
 
             public:
-                static SinkFactory &get_instance();
+                static SinkFactory &instance();
                 virtual ~SinkFactory();
                 SinkPtr create_sink(const SinkConfig &sink_config);
         };
