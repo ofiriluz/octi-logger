@@ -66,7 +66,7 @@ namespace Octi
                 return 0;
             }
 
-            recursive_folder_creation(dirname(strdupa(dir)), mode);
+            recursive_folder_creation(dirname(strdup(dir)), mode);
 
             int rc = mkdir(dir, mode);
 
