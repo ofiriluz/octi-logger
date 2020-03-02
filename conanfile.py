@@ -15,7 +15,7 @@ class OctiLoggerConanFile(ConanFile):
     def build(self):
         cmake = CMake(self)
         cmake.configure()
-        cmake.build(target="clean")
+        # cmake.build(target="clean")
         cmake.build()
         cmake.install()
     
